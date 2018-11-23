@@ -1,8 +1,9 @@
-#以NSPointerArray推动多代理设计模式再出发
+
+# 以NSPointerArray推动多代理设计模式再出发
 
 
 
-##背景思考
+## 背景思考
 
 在买买车的项目中，**如果需要一个网络接口请求来的数据来确定哪些内容需要屏蔽，哪些控件需要重新安排位置，或者一些要同步显示更新的数据等**。遇到这样的需求大多数人的做法 拍拍屁股走人，直接用通知`NSNotification` 来实现。包括我之前也是这么Naive...
 
@@ -18,7 +19,7 @@
 
 
 
-##设计模式
+## 设计模式
 
 
 
@@ -259,14 +260,14 @@ p = (__bridge void*)objc;
 
 
 
- NSArray：
+### NSArray：
 
 ```objective-c
 NSValue *value = [NSValue valueWithNonretainedObject:myObj];
 [array addObject:value];
 ```
 
-NSMutableArray：
+### NSMutableArray：
 
 ```objective-c
 @implementation NSMutableArray (WeakReferences)
